@@ -9,26 +9,6 @@ class Book{
 }
 // UI Class: Handle UI task
 class UI{
-     
-    static displayBooks(){
-        const StoredBooks = [
-            {
-                title: "Book one",
-                author: 'john doe',
-                isbn: '3434434'
-            },
-            {
-                title: "Book Two",
-                author: 'john doe',
-                isbn: '34554'
-            }
-        ];
-
-        const books = StoredBooks;
-        books.forEach((book)=>{UI.addBookToList(book)});
-    }
-    
-
     static addBookToList(cook){
         const list = document.querySelector('#book-list'); 
         const row = document.createElement('tr')
@@ -39,13 +19,14 @@ class UI{
         <td>${cook.isbn}</td>
         <td><a href="#" class="btn btn-danger btn-sm delete">X</a></td>
         `;
-        list.appendChild(row);
+        list.appendChild(row)
     }
-    static clearFields(){ 
-        document.querySelector('#title').value = '';
-        document.querySelector('#author').value = '';
-        document.querySelector('#isbn').value = '';
+     
+    static displayBooks(){
+        const books = [];
+        books.forEach((book)=>{UI.addBookToList(book)});
     }
+
 }
 // Store Class: Handle Storage
 

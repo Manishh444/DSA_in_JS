@@ -41,6 +41,26 @@ class UI{
         `;
         list.appendChild(row);
     }
+
+    static deleteBook(el){
+        if(el.classList.contains('delete')){
+            el.parentElement.parentElement.remove();
+        }
+    }
+
+    //<dic class="alert alert-success">alert mesge</div>
+    static showAlert(message,className){
+        const div = document.createElement('div');
+        div.className = `alert alert-${className}`;
+        div.appendChild(document.createTextNode(message));
+        const container = document.querySelector('.container');
+        const form = document.querySelector('#book-form');   
+        container.insertBefore(div, form);
+
+        //Vanish in 3 sec
+        setTimeout(()=> document.querySelector('.alert').remove(), 1000);
+    }
+
     static clearFields(){ 
         document.querySelector('#title').value = '';
         document.querySelector('#author').value = '';
@@ -63,14 +83,34 @@ document.querySelector('#book-form').addEventListener('submit',(e)=>{
     const author = document.querySelector('#author').value;
     const isbn = document.querySelector('#isbn').value;
 
+
+    //Validate
+ if(title === '' || author === '' || isbn ===""){
+     UI.showAlert('all fields are mandatory', 'info')
+ }
+ else{
     //Intantiate book
      const book = new Book(title,author,isbn);
 
      //Add book to UI
      UI.addBookToList(book);
+
+     //show alert  for book add
+
+     UI.showAlert("Book Added ", 'success')
+
+    UI.clearFields();
+ }
+    
+
     });
 
 //Event: Remove a Book
+
+document.querySelector('#book-list').addEventListener('click', (e)=>{
+    UI.deleteBook(e.target);
+    UI.showAlert("Delete",'success')
+});
 
 
 

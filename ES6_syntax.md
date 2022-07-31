@@ -12,3 +12,5 @@
 
 
 -let sayName = (name)=> {return name }
+// this is just a goodbye commit of july 22
+// I tried best to keep the streak going, this was one of the most productive month of 22

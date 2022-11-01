@@ -1,3 +1,3 @@
-#this repo is also used for posting my learning of react
-# vanilla
-Hi this my repo containing my projects and collaborations on vanilla js. Feel free to add your two cents.
+# Startin with DSA in JS specially focused on Implementing complex Data Structures.
+
+## will dedicate NOV-22 for stack& queue and Linked list

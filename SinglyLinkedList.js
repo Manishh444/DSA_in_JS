@@ -13,16 +13,26 @@ class SinglyLinkedList{
         this.length = 0;
     }
     push(val){
-        this.newNode = val;
+        // create a node
+        this.newNode = new Node(val);
+        // check if list is empty 
         if(!this.head){
             this.head = this.newNode;
             this.tail = this.head
         }
+        // else modify current tail property and set new tail
         else{
             this.tail.next = this.newNode;
             this.tail = this.newNode
         }
-        this.length++
+        // increase length by one everytime push method is called and executed
+        this.length++;
         return this;
     }
 }
+let newList = new SinglyLinkedList();
+// console.log(newList.push("kuch"))
+newList.push("kuch")
+newList.push("such")
+newList.push("much")
+console.log(newList)

@@ -9,7 +9,7 @@ class Node{
 class SinglyLinkedList{
     constructor(){
         this.head = null;
-        this.tail = null;
+        this.tail = this.head;
         this.length = 0;
     }
     push(val){
@@ -17,12 +17,12 @@ class SinglyLinkedList{
         this.newNode = new Node(val);// NODE {val: 2; next: null}
         // check if list is empty 
         if(!this.head){//if(not null)
-            this.head = this.newNode;
-            this.tail = this.head;
+            this.head = this.newNode;// 
+            this.tail = this.head;// both head and tail are now pointing to same object of Node class
         }
         // else modify current tail property and set new tail
         else{
-            this.tail.next = this.newNode;
+            this.tail.next = this.newNode;// 
             // console.log("this is tail.next",this.tail.next);
             this.tail = this.newNode;
             // console.log("this is tail",this.tail);

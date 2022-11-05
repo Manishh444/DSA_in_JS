@@ -22,7 +22,7 @@ class SinglyLinkedList{
         }
         // else modify current tail property and set new tail
         else{
-            this.tail.next = this.newNode;// 
+            this.tail.next = this.newNode;// updating both head and tail next property as they still pointing to same object. this is true only for second element because after that tail will be updated and no longer point to same object as head
             // console.log("this is tail.next",this.tail.next);
             this.tail = this.newNode;
             // console.log("this is tail",this.tail);

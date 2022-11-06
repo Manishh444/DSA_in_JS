@@ -16,7 +16,12 @@ class SinglyLinkedList{
         // create a node
         this.newNode = new Node(val);// NODE {val: 2; next: null}
         // check if list is empty 
-        if(!this.head){//if(not null)
+
+        // how below if condition is working?
+
+        // this.head will contain null and null is a falsy value so if contion will execute as contion evaluate to false
+        // but then add !( not operator) will make this condition true
+        if(this.head === null){//if(not null)
             this.head = this.newNode;// 
             this.tail = this.head;// both head and tail are now pointing to same object of Node class
         }
@@ -32,16 +37,42 @@ class SinglyLinkedList{
         this.length++;
         return this;
     }
+
+    pop(){
+
+        // if condition check if list is empty or not
+        if(!this.head) return undefined;
+        let temp = this.head;
+        let pre = this.head;
+        // while loop check for last node of list by two pointer pre and temp
+        while(temp.next){
+            pre = temp;
+            temp = temp.next;
+        }
+        // tail is updated to pre pointer value
+        this.tail = pre;
+        // tail's next property is updated to null
+        this.tail.next = null;
+        // length property is decremented by 1 each time 
+        this.length--;
+        if(this.length===0){
+            this.head = null;
+            this.tail = null;
+        }
+        return temp;
+    }
 }
 let newList = new SinglyLinkedList();
 // console.log(newList)
 // newList.push(null)
 newList.push("such")
-newList.push("touch")
+// newList.push("touch")
 // newList.push("much")
 
 // newList.push("lavender")
 // console.log(newList.head)
 // console.log(newList.head.next.next)
 // console.log(newList.tail)
+console.log(newList)
+newList.pop();
 console.log(newList)

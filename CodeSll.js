@@ -26,6 +26,21 @@ class SinglyLinkList{
        this.length++;
        return this;
    }
+  pop(value){
+  if(!this.head){
+  return undefined;
+  }
+  const temp = this.head;
+  const pre = this.head;
+    while(temp.next){
+    pre = temp.next;
+      temp = temp.next
+    }
+    this.tail=pre;
+    this.tail.next=null;
+    this.length--;
+    return this
+  }
 }
 
 const newList = new SinglyLinkList();

@@ -39,7 +39,7 @@ class SinglyLinkList{
     this.tail=pre;
     this.tail.next=null;
     this.length--;
-    if(this.length){
+    if(!this.length){
     this.head=null;
     this.tail=null;}
     return this

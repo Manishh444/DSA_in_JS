@@ -79,6 +79,14 @@ class SinglyLinkList{
     }
     return current;
   }
+  set(index, value){
+    let found = this.get(index);
+    if(found){
+      found.value = value;
+      return true;
+    }
+    return false;
+  }
 }
 
 const newList = new SinglyLinkList();

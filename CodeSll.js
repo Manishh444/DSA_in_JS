@@ -42,7 +42,7 @@ class SinglyLinkList{
     if(!this.length){
     this.head=null;
     this.tail=null;}
-    return this
+    return temp;
   }
 }
 

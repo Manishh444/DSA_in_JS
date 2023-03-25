@@ -57,13 +57,15 @@ class SinglyLinkList{
     return temp
   }
     unshift(value){
-    const newNode = new Node(value);
-    if(!this.head){
+    const newNode = new Node(value); // create a new NODE
+    if(!this.head){                     // check for edge case 1 if list is empty or not
       this.head = newNode;
       this.tail = newNode;
     }
+    else{                             // if list is not empty then else condition is executed
     newNode.next = this.head;
     this.head = newNode;
+    }
     this.length++
     return this;
   }
